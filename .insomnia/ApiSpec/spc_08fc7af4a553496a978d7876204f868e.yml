@@ -1,7 +1,7 @@
 _id: spc_08fc7af4a553496a978d7876204f868e
 type: ApiSpec
 parentId: wrk_dbe4e5b0731f4365ba56d2b43e84aab5
-modified: 1618868462411
+modified: 1618869873208
 created: 1618868134722
 fileName: OpenShift
 contents: |
@@ -16,7 +16,7 @@ contents: |
       name: Kong
   servers:
     - url: 'http://httpbin.org'
-      description: kongenterprise
+      description: kongenterpriseaaa
   paths:
     '/get':
       get:
