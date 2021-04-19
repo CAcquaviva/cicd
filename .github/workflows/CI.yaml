@@ -20,8 +20,8 @@ jobs:
         tac apitmp.yaml | sed -e 1,5d | tac > httpbin2.yaml
         rm apitmp.yaml
         inso generate config httpbin2.yaml --output kong.yaml
-        deck --kong-addr http://35.239.245.239 sync --headers "kong-admin-token:kong"
+        deck --kong-addr http://35.239.245.239:8001 sync --headers "kong-admin-token:kong"
         cp httpbin2.yaml ./kong-portal-templates/workspaces/default/specs
         cd ./kong-portal-templates
-        KONG_ADMIN_URL=http://35.239.245.239 KONG_ADMIN_TOKEN=kong portal deploy default
+        KONG_ADMIN_URL=http://35.239.245.239:8001 KONG_ADMIN_TOKEN=kong portal deploy default
 
