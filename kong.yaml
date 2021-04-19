@@ -1,0 +1,30 @@
+_format_version: "1.1"
+services:
+  - name: httpbin_simplest
+    url: http://httpbin.org
+    plugins: []
+    routes:
+      - tags:
+          - OAS3_import
+          - OAS3file_httpbin2.yaml
+        name: httpbin_simplest-path-get
+        methods:
+          - GET
+        paths:
+          - /get
+        strip_path: false
+        plugins:
+          - name: rate-limiting
+            config:
+              minute: 3
+              policy: local
+    tags:
+      - OAS3_import
+      - OAS3file_httpbin2.yaml
+upstreams:
+  - name: httpbin_simplest
+    targets:
+      - target: httpbin.org:80
+    tags:
+      - OAS3_import
+      - OAS3file_httpbin2.yaml

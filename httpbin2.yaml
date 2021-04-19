@@ -1,0 +1,25 @@
+  openapi: 3.0.2
+  info:
+    version: '1.0'
+    title: httpbin-simplest
+    license:
+      name: Apache 2.0
+    description: 'The simplest HTTP Request & Response Service.'
+    contact:
+      name: Kong
+  servers:
+    - url: 'http://httpbin.org'
+      description: kongenterpriseaaa
+  paths:
+    '/get':
+      get:
+        summary: Get HTTPbin
+        tags:
+          - get
+        x-kong-plugin-rate-limiting:
+          enabled: true
+          config:
+            minute: 3
+            policy: local
+        responses:
+          '200':
