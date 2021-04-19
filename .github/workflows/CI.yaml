@@ -1,0 +1,27 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    name: Kong
+    steps:
+    - name: GitHub repo
+      run: |
+        echo "Current repository: ${{ github.repository }}!"
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: Kong Deploy API Spec
+      uses: ./.github/actions
+    - name: Kong API deploy
+      run: |
+        pwd
+        tac apitmp.yaml | sed -e 1,5d | tac > httpbin2.yaml
+        rm apitmp.yaml
+        inso generate config httpbin2.yaml --output kong.yaml
+        deck --kong-addr http://35.239.245.239 sync --headers "kong-admin-token:kong"
+        cp httpbin2.yaml ./kong-portal-templates/workspaces/default/specs
+        cd ./kong-portal-templates
+        KONG_ADMIN_URL=http://35.239.245.239 KONG_ADMIN_TOKEN=kong portal deploy default
+
