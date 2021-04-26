@@ -1,0 +1,21 @@
+_id: req_wrk_dbe4e5b0731f4365ba56d2b43e84aab5e30145bd
+type: Request
+parentId: wrk_dbe4e5b0731f4365ba56d2b43e84aab5
+modified: 1619208134109
+created: 1618924726553
+url: ""
+name: Get HTTPbin
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1618924726553
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
