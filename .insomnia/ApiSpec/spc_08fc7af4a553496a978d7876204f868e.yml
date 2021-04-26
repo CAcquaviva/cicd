@@ -1,11 +1,12 @@
 _id: spc_08fc7af4a553496a978d7876204f868e
 type: ApiSpec
 parentId: wrk_dbe4e5b0731f4365ba56d2b43e84aab5
-modified: 1619444857950
+modified: 1619445143204
 created: 1618868134722
 fileName: OpenShift
-contents: |
+contents: >
   openapi: 3.0.2
+
   info:
     version: '1.0'
     title: httpbin-simplest
@@ -23,6 +24,11 @@ contents: |
         summary: Get HTTPbin
         tags:
           - get
+        x-kong-plugin-openid-connect:
+          enabled: true
+          config:
+            issuer: https://keycloak-keycloak.apps.kongcluster1.kong-acquaviva.com/auth/realms/kong
+            cache_ttl: 10
         responses:
           '200':
             description: The request's query parameters.

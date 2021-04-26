@@ -1,9 +1,9 @@
 _id: req_wrk_dbe4e5b0731f4365ba56d2b43e84aab5e30145bd
 type: Request
 parentId: wrk_dbe4e5b0731f4365ba56d2b43e84aab5
-modified: 1619208134109
+modified: 1619445058646
 created: 1618924726553
-url: ""
+url: http://35.235.106.32/get
 name: Get HTTPbin
 description: ""
 method: GET
