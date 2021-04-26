@@ -1,7 +1,7 @@
 _id: req_wrk_dbe4e5b0731f4365ba56d2b43e84aab5e30145bd
 type: Request
 parentId: wrk_dbe4e5b0731f4365ba56d2b43e84aab5
-modified: 1619445058646
+modified: 1619445377243
 created: 1618924726553
 url: http://35.235.106.32/get
 name: Get HTTPbin
@@ -10,7 +10,12 @@ method: GET
 body: {}
 parameters: []
 headers: []
-authentication: {}
+authentication:
+  type: basic
+  useISO88591: false
+  disabled: false
+  username: kong_id
+  password: 2e7c9d11-9076-4389-b070-e10cea7dc8fe
 metaSortKey: -1618924726553
 isPrivate: false
 settingStoreCookies: true
