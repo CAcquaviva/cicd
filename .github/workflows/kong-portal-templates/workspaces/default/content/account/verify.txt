@@ -1,4 +1,0 @@
----
-layout: system/verify-account.html
-private: true
----

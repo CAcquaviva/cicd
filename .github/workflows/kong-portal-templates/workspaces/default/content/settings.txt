@@ -1,6 +1,0 @@
----
-readable_by: '*'
-layout: system/settings.html
-private: true
-title: Account Settings
----

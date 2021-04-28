@@ -1,6 +1,0 @@
----
-readable_by: '*'
-layout: system/dashboard.html
-private: true
-title: Dashboard
----
